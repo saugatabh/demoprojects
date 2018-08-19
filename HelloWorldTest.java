@@ -1,20 +1,17 @@
-import org.junit.Assert.*;
+import org.junit.runner.JUnitCore;
+import org.junit.runner.Result;
+import org.junit.runner.notification.Failure;
 
-import org.junit.Before;
-import org.junit.Test;
+class HelloWorldTest {
 
-public class HelloWorldTest {
+	   public static void main(String[] args) {
+	      Result result = JUnitCore.runClasses(HelloWorld.class);
 
-	private HelloWorld subject;
+	      for (Failure failure : result.getFailures()) {
+	         System.out.println(failure.toString());
+	      }
 
-	@Before
-	public void setup() {
-		subject = new HelloWorld();
-	}
-
-	@Test
-	public void testGetMessage() {
-		assertEquals("Hello World!", subject.getMessage(false));
-	}
+	      System.out.println(result.wasSuccessful());
+   }
 
 }

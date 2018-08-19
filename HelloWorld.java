@@ -1,6 +1,11 @@
-class HelloWorld {
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
-	public static void main(String args[]){
-		System.out.println("HelloWorld");
-	}
+public class HelloWorld {
+	@Test
+
+	public void testAdd() {
+	      String str = "It is Hello World";
+	      assertEquals("It is Hello World",str);
+   }
 }
